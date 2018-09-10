@@ -1,0 +1,80 @@
+<div class="content" style="background-color: #FAFAFA;margin-top: 0px;padding-top: 50px">
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-md-12 col-12" style="padding-bottom: 30px">
+        <div class="card">
+          <form class="form-horizontal">
+            <div class="card-header card-header-text" data-background-color="rose">
+              <h4 class="card-title" style="font-weight: lighter">RING-1 / QUESTION-1</h4>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-content" style="padding-left: 70px">
+              <div class="row" style="margin-bottom: 50px">
+              <!--Countdown Timer-->
+              <div class="col-sm-12" style="width: 650px;left: 50%;transform: translateX(-50%);background-color: orange;color: #836200;text-align: center;font-size: 30px;font-weight: bold;height: 50px;padding-top: 15px;border-radius: 10px">
+                <div><span id="time">00h : 00m : 00s</span></div>
+              </div>
+              </div>
+              <div class="row" style="font-weight: 600;font-size: 20px;padding-left: 15px;color: #034c8d">
+                <!--<div class="col-12"></div>-->
+                <div class="col-sm-1" style="padding-right: 0px;width: 60px;color: #E9B500"><i class="fa fa-circle"></i></div>
+                <div class="col-sm-11" style="padding-left: 0px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid, aspernatur delectus dignissimos dolorem est et itaque laudantium maiores molestias nihil officia omnis possimus provident quas, reprehenderit sed suscipit tempore.?</div>
+              </div>
+              <div class="row">
+                <div class="card-content" style="padding-left: 70px">
+                <form class="form-horizontal" (ngSubmit)="saveStudent(frmStudent)" #frmStudent="ngForm" action="" method="post">
+                  <div class="row">
+                <div class="col-sm-10 checkbox-radios">
+                  <div class="radio" style="font-size: 20px">
+                  <label style="color: #034c8d;font-weight: 500;padding-left: 40px;">
+                    <input type="radio" ng-control="options" name="optionsRadios"
+                           value="Male" (click)="setGender(1)">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias distinctio ducimus et fuga, harum quas quidem .
+                  </label>
+                </div>
+                  <div class="radio">
+                    <label style="color: #034c8d;font-weight: 500;padding-left: 40px;">
+                      <input type="radio" ng-control="options" name="optionsRadios"
+                             value="Female" (click)="setGender(2)">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aut ea earum fugiat impedit, inventore ipsum !
+                    </label>
+                  </div>
+                  <div class="radio" style="font-size: 20px">
+                    <label style="color: #034c8d;font-weight: 500;padding-left: 40px;">
+                      <input type="radio" ng-control="options" name="optionsRadios"
+                             value="Male" (click)="setGender(3)">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi cumque cupiditate, eos error esse facilis,
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label style="color: #034c8d;font-weight: 500;padding-left: 40px;">
+                      <input type="radio" ng-control="options" name="optionsRadios"
+                             value="Female" (click)="setGender(4)">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam distinctio ducimus maxime, nam nemo nobis
+                    </label>
+                  </div>
+                </div>
+                  </div>
+                  <div class="row" style="margin-top: 50px;text-align: center;font-weight: bold;font-size: 20px;line-height: 50px">
+                    <!--<div class="col-sm-12" style="border-radius: 10px;background-color: #ff2e2d;color: #7a0000">Incorrect Answer</div>-->
+                    <!--<div class="col-sm-12" style="border-radius: 10px;background-color: #2c802b;color: #004b00">Correct Answer</div>-->
+                  </div>
+                  <button type="button" style="left: 50%;transform: translateX(-50%);margin-top: 80px" class="btn btn-fill" (click)="startGame()">Confirm</button>
+                </form>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer" style="background-color: white;border-top: 1px solid #e7e7e7">
+    <div class="container-fluid">
+      <p class="copyright pull-right">
+        Copyright &copy; 2018 - University Of Sri Jayewardenapura / Department Of Computer Science
+      </p>
+    </div>
+  </footer>
+</div>
