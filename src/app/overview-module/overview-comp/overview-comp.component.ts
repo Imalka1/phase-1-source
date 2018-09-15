@@ -1,15 +1,19 @@
 import {Component, OnInit} from '@angular/core';
 import "../../../assets/js/countdown_timer.js";
-import {SocketService} from "../../service/socket.service";
+import {OverviewService} from "../services/overview.service";
+import {AngularFireDatabase} from "angularfire2/database";
 
 declare var startCountdownTimer: any;
+declare var getHours: any;
+declare var getMinutes: any;
+declare var getSeconds: any;
 
 @Component({
-  selector: 'app-main-view',
-  templateUrl: './main-view.component.html',
-  styleUrls: ['./main-view.component.css']
+  selector: 'app-overview-comp',
+  templateUrl: './overview-comp.component.html',
+  styleUrls: ['./overview-comp.component.css']
 })
-export class MainViewComponent implements OnInit {
+export class OverviewCompComponent implements OnInit {
 
   status: Array<boolean> = new Array();
   circle1: Array<boolean> = new Array();
@@ -19,13 +23,14 @@ export class MainViewComponent implements OnInit {
   btnText: string = 'Start';
   started: boolean = false;
 
-  constructor(private socketService: SocketService) {
-    this.socketService.initSocket();
-    socketService.teamReg.subscribe((value) => {
-      if (value.authenticate) {
-        this.status[value.teamPosition - 1] = true;
-      } else {
-        this.status[value.teamPosition - 1] = false;
+  constructor(private overviewService: OverviewService, private db: AngularFireDatabase) {
+    this.db.list('users/').valueChanges().subscribe((result) => {
+      for (let i in JSON.parse(JSON.stringify(result))) {
+        if (JSON.parse(JSON.stringify(result))[i]['authentication']) {
+          this.status[JSON.parse(JSON.stringify(result))[i]['position'] - 1] = true;
+        }else{
+          this.status[JSON.parse(JSON.stringify(result))[i]['position'] - 1] = false;
+        }
       }
     });
   }
@@ -58,6 +63,7 @@ export class MainViewComponent implements OnInit {
 
   startGame() {
     startCountdownTimer();
+    console.log(getMinutes());
     this.started = true;
     for (let i = 0; i < 20; i++) {
       // this.status[i] = true;

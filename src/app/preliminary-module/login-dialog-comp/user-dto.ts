@@ -1,4 +1,4 @@
-export class User {
+export class UserDto {
   teamId: string;
   teamPassword: string;
   teamPosition: number;

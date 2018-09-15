@@ -13,10 +13,11 @@ function getTimeRemaining(endtime) {
   };
 }
 
+var hoursSpan;
+var minutesSpan;
+var secondsSpan;
+
 function initializeClock(id, endtime, display) {
-  var hoursSpan;
-  var minutesSpan;
-  var secondsSpan;
 
   function updateClock() {
     var t = getTimeRemaining(endtime);
@@ -41,3 +42,15 @@ function startCountdownTimer() {
   deadline = new Date(Date.parse(new Date()) + 1 * 5 * 60 * 1000);
   initializeClock('time', deadline, document.querySelector('#time'));
 };
+
+function getHours(){
+  return hoursSpan;
+}
+
+function getMinutes(){
+  return minutesSpan;
+}
+
+function getSeconds(){
+  return secondsSpan;
+}

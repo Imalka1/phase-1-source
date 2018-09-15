@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import "../../../../assets/js/countdown_timer.js";
-import "../../../../assets/js/material-dashboard98f3.js";
+import "../../../assets/js/countdown_timer.js";
+import "../../../assets/js/material-dashboard98f3.js";
 import {NgForm} from "@angular/forms";
 
 declare var startCountdownTimer: any;
 declare var loadMaterials: any;
 
 @Component({
-  selector: 'app-question',
-  templateUrl: './question.component.html',
-  styleUrls: ['./question.component.css']
+  selector: 'app-question-view-comp',
+  templateUrl: './question-view-comp.component.html',
+  styleUrls: ['./question-view-comp.component.css']
 })
-export class QuestionComponent implements OnInit {
+export class QuestionViewCompComponent implements OnInit {
 
   constructor() { }
 
@@ -36,4 +36,5 @@ export class QuestionComponent implements OnInit {
     //   }
     // }
   }
+
 }
